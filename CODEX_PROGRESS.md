@@ -5,7 +5,7 @@
 - Preserved UI/resources, configuration, version 1.0.0, packet architecture and saved data. Installed baseline SHA-256 exactly matches the previously verified artifact.
 - Final build passed: 31 progression checks and 15 Forge GameTests. Independent focused review found no important issues; JAR entry comparison confirms only intended classes changed.
 - Updated artifact: `dist/medievalstatus-1.0.0.jar`. Installed CurseForge JAR remains unchanged.
-- GitHub push authentication check still reports no saved credentials. The user requested a direct upload retry after verification.
+- Browser authentication completed; source and JAR uploaded to origin/main in commit `2ef45a8`. Downloaded the GitHub JAR and verified its SHA-256 matches the tested artifact.
 
 Design: standalone Forge 1.20.1 / Java 17 mod. Three independent progression systems; server-authoritative awards, purchases and resets. Original stone/gold UI follows the supplied layout. No classes, spells or races.
 
@@ -23,9 +23,8 @@ Design: standalone Forge 1.20.1 / Java 17 mod. Three independent progression sys
 - Installation README, configuration examples, CI workflow and validation report included.
 
 ## Remaining
-- Upload committed source and JAR to origin/main once GitHub authentication is available.
 - Manual visual, survival and two-client multiplayer checks listed in TESTING.md.
 
-Last successful build: `gradlew build`, 2026-10-20, 17 progression checks and 11 dedicated Forge GameTests passed.
-Blocker: Git Credential Manager has no saved GitHub login; push dry-run could not authenticate. Two device-login attempts returned no authorization code and were canceled; user GitHub sign-in is required.
-Next: authenticate GitHub, then `git push origin main`. No implementation work remains before upload; manual playtest coverage is documented separately.
+Last successful build: `gradlew build`, 2026-10-20, 31 progression checks and 15 dedicated Forge GameTests passed.
+Blockers: none. Upload complete and remote artifact verified.
+Next: manual playtest coverage documented in TESTING.md.
