@@ -20,5 +20,5 @@ Design: standalone Forge 1.20.1 / Java 17 mod. Three independent progression sys
 - Manual visual, survival and two-client multiplayer checks listed in TESTING.md.
 
 Last successful build: `gradlew build`, 2026-10-20, 17 progression checks and 11 dedicated Forge GameTests passed.
-Blocker: Git Credential Manager has no saved GitHub login; push dry-run could not authenticate. Device login started but has not returned an authorization code.
+Blocker: Git Credential Manager has no saved GitHub login; push dry-run could not authenticate. Two device-login attempts returned no authorization code and were canceled; user GitHub sign-in is required.
 Next: authenticate GitHub, then `git push origin main`. No implementation work remains before upload; manual playtest coverage is documented separately.
