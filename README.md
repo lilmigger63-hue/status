@@ -25,6 +25,8 @@ Six independent attributes start at level 1. Actions give attribute XP and separ
 
 Attribute XP requirement: `floor(100 × level^1.6)`. Character requirement: `floor(150 × level^1.5)`. Character levels start at 1 with zero points and award **exactly 5 skill points per level crossed**, including multi-level awards. There is no gameplay level cap; signed 64-bit storage and saturated accounting prevent overflow. All bonuses have diminishing returns and hard effect caps.
 
+Every complete **50 rewarded actions in an activity adds 2.5%** to its associated passive effect, before the existing cap. Numeric effects use the base value; chances and reductions gain percentage points. These bonuses are derived from existing counters, remain after Reset Skills, and introduce no changes to the interface, configuration, save format or version number. See [the focused verification report](test-results/activity-update.txt) for the exact mapping and validation.
+
 ## Passive upgrades
 
 Spend points in **Skill Upgrades**, using the category filters, mouse wheel, or page buttons. All 18 upgrades have a configurable cost, maximum rank, effect and enabled flag. Purchases cannot increase attributes.

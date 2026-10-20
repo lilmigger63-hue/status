@@ -25,7 +25,8 @@ public final class ClientEvents {
     @SubscribeEvent public static void mining(PlayerEvent.BreakSpeed e) {
         if (!e.getEntity().level().isClientSide || !ClientState.ready) return;
         var b=ClientState.snapshot.getCompound("bonuses");
-        double bonus=b.getDouble(e.getState().is(BlockTags.LOGS)?"Woodcutting":"Mining");
+        String key=e.getState().is(BlockTags.LOGS)?"Woodcutting":e.getState().is(BlockTags.MINEABLE_WITH_PICKAXE)?"Mining":b.contains("Other block mining")?"Other block mining":"Mining";
+        double bonus=b.getDouble(key);
         if (e.getState().getBlock() instanceof CropBlock) bonus+=Math.min(.5,skill(Upgrade.EXPERIENCED_FARMER));
         if (e.getEntity().isUnderWater() || !e.getEntity().onGround()) bonus+=Math.min(.6,skill(Upgrade.SURE_GRIP));
         e.setNewSpeed((float)(e.getOriginalSpeed()*(1+Math.min(ClientState.snapshot.getDouble("miningCap"),bonus))));

@@ -1,10 +1,11 @@
 Medieval Status validation - 2026-10-20 Europe/Copenhagen
 Minecraft 1.20.1; Forge 47.4.0; Java 17; Gradle 8.8
+Activity milestone update, preserving mod ID and version 1.0.0.
 gradlew build: BUILD SUCCESSFUL
-progressionTest: 17 checks passed
+progressionTest: 31 checks passed
 gradlew runGameTestServer -x downloadAssets --stacktrace: BUILD SUCCESSFUL
-Forge GameTest server: All 11 required tests passed
-Regression confirmed before fix: shift-clicked brewed potion did not award XP
-Regression confirmed before fix: changed merchant price left an invalid result
-Final regression tests pass.
-Client visual QA and two-client multiplayer playtesting remain manual.
+Forge GameTest server: All 15 required tests passed
+Original 11 Forge tests remain passing; all 4 new tests failed before implementation and passed afterward.
+Independent focused review: no important correctness or scope findings.
+JAR comparison: UI/resources/configuration/networking/metadata unchanged.
+Client/server manual playtesting remains as documented in TESTING.md.

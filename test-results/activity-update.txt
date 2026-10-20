@@ -1,0 +1,17 @@
+Medieval Status activity update - 2026-10-20 Europe/Copenhagen
+Target: Minecraft 1.20.1; Forge 47.4.0; Java 17; mod ID medievalstatus; version 1.0.0
+Baseline installed JAR SHA-256: 2f51f8e7b278c5fca9b3b999d299ff246e7085df0bbc2b6a951b94ed97eaef05
+Updated JAR SHA-256: 777589dff5eb83bd9f57a9bdfbf21e0c31f0b4fec384826620872ac8023eb855
+Formula: (max(0, cumulativeCounter) / 50L) * 0.025
+Mapping: Mining->mining speed; Woodcutting->woodcutting speed; Farming->crop yield chance; Exploration->movement; Archery->arrow damage; Endurance->base maximum health; Enchanting->refund chance; Brewing->consumed potion duration; Trading->discount; Melee->melee damage; Breeding->newborn growth reduction; Crafting->held-tool repair chance.
+Build: BUILD SUCCESSFUL. progressionTest: 31 checks passed.
+Forge dedicated GameTest server: all 15 required tests passed, including original 11 and 4 new focused tests.
+New integration tests first failed on the original pipeline, then passed after implementation.
+Verified: isolated mappings, additive stacking, unchanged caps, actual base-health scaling, cache boundaries, NBT round-trip, reset/death preservation, purchased upgrades, nonduplicated modifiers and server mining classification.
+JAR comparison: unchanged entries include every UI/resource/config/network class and metadata. Changes limited to intended gameplay/helper classes and nested classes, build manifest timestamp, and new GameTest class.
+No UI, texture, configuration, XP award, counter, upgrade cost/rank, NBT format, mod ID or version changes.
+Installed CurseForge JAR was not overwritten. Output: dist/medievalstatus-1.0.0.jar
+Manual checks remaining: real client/server milestone sync and mining prediction; survival trials of all chance/duration effects; actual world restart/dimension travel; modpack compatibility.
+Changed production source: Bonuses.java; Events.java; PlayerData.java; client/ClientEvents.java; core/Progression.java.
+Changed tests: new ActivityBonusGameTests.java; test/java/dev/medievalstatus/ProgressionTest.java.
+Updated delivery files: README.md; TESTING.md; CODEX_PROGRESS.md; dist/medievalstatus-1.0.0.jar; dist/SHA256SUMS.txt; test-results/verification.txt; this report.

@@ -15,6 +15,7 @@ public final class PlayerData {
     public long resetAt;
     public boolean dirty = true, bonusesDirty = true;
     public Bonuses cachedBonuses;
+    double baseHealth=20;
     public long combatAt = -1200;
     public double recoverable;
     public int lastEnchants = -1;
@@ -27,7 +28,10 @@ public final class PlayerData {
     public net.minecraft.resources.ResourceKey<net.minecraft.world.level.Level> lastDimension;
 
     public static PlayerData get(ServerPlayer player) {
-        return ONLINE.computeIfAbsent(player.getUUID(), id -> read(player.getPersistentData().getCompound(KEY)));
+        PlayerData d=ONLINE.computeIfAbsent(player.getUUID(), id -> read(player.getPersistentData().getCompound(KEY)));
+        double base=player.getAttributeBaseValue(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH);
+        if (d.baseHealth!=base) { d.baseHealth=base; d.bonusesDirty=true; d.dirty=true; }
+        return d;
     }
     public static void remove(ServerPlayer p) { save(p); ONLINE.remove(p.getUUID()); }
     public static void clear() { ONLINE.clear(); }
@@ -47,9 +51,10 @@ public final class PlayerData {
         long before = progression.attribute(attribute).level();
         progression.attribute(attribute).award(reward * Config.ATTRIBUTE_MULTIPLIER.get() * Config.ATTRIBUTE_MULTIPLIERS.get(attribute).get(), Config.ATTRIBUTE_BASE.get(), Config.ATTRIBUTE_POWER.get());
         progression.awardOverall(reward * Config.OVERALL_MULTIPLIER.get(), Config.OVERALL_BASE.get(), Config.OVERALL_POWER.get());
-        activities.merge(activity, 1L, Progression::add);
+        long previousActivity=activities.getOrDefault(activity,0L);
+        long currentActivity=activities.merge(activity, 1L, Progression::add);
         dirty = true;
-        if (before != progression.attribute(attribute).level()) bonusesDirty = true;
+        if (before != progression.attribute(attribute).level() || previousActivity/50L!=currentActivity/50L) bonusesDirty = true;
         save(p);
     }
     public CompoundTag write() {

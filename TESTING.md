@@ -2,7 +2,7 @@
 
 Environment: Windows, Java 17.0.20.1, Minecraft 1.20.1, Forge 47.4.0, Gradle 8.8. Validation date: 2026-10-20.
 
-Final results: **BUILD SUCCESSFUL**, **17 progression checks passed**, **all 11 required Forge GameTests passed**. The distributable JAR was reobfuscated by ForgeGradle; its SHA-256 is recorded in `dist/SHA256SUMS.txt`. A concise execution record is in `test-results/verification.txt`.
+Final results after the activity update: **BUILD SUCCESSFUL**, **31 progression checks passed**, **all 15 required Forge GameTests passed**. The distributable JAR was reobfuscated by ForgeGradle; its SHA-256 is recorded in `dist/SHA256SUMS.txt`. A concise execution record is in `test-results/verification.txt`.
 
 Commands used after the final code change:
 
@@ -13,7 +13,7 @@ Commands used after the final code change:
 
 ## Automated coverage
 
-The `progressionTest` task runs 17 checks: initial state, independent attributes, no skill points from attribute XP, exactly five points per overall level, multi-level awards, invalid IDs, insufficient points, rank limits, balance accounting, attribute preservation, reset refunds, malformed XP, safe XP curves, corrupt saved-value repair and bounded derived bonuses.
+The `progressionTest` task runs 31 checks: the original 17 progression/accounting checks, 12 activity milestone boundaries, negative counters and finite results at the largest signed 64-bit counter.
 
 Forge GameTests run in an actual dedicated GameTest server:
 
@@ -28,6 +28,12 @@ Forge GameTests run in an actual dedicated GameTest server:
 9. The actual brewing menu's shift-click path rewards a new potion exactly once, including after reinsertion with the activity cooldown cleared.
 10. Closing a merchant menu does not resurrect prices already cleared by vanilla.
 11. Resetting a merchant discount revalidates the existing trade result against the new required payment.
+12. All 12 activity counters affect only their own passive effect.
+13. Activity contributions add to existing bonuses before unchanged caps; unrelated effects retain their original values.
+14. Existing NBT, death clone, purchased skills and resets preserve activity bonuses. Endurance scales from actual base health without healing or duplicate modifiers.
+15. Crossing 49 → 50 invalidates bonuses, 50 → 51 reuses the cache, and Mining cannot boost woodcutting or unrelated digging.
+
+All four new integration tests failed against the old calculation pipeline before implementation, then passed with the update. An entry-by-entry comparison against the installed baseline JAR confirmed every resource, UI class, configuration class, networking class and unrelated class is unchanged. Only the intended gameplay/helper classes, their compiler-generated nested classes, the build timestamp and the added GameTest class differ. The installed JAR itself was not overwritten.
 
 The brewing regression first failed with zero XP on shift-click; the implementation now reads raw source tags and clears matching destination tokens. The trading regression first demonstrated a stale trade result after reset; recomputing the merchant result and broadcasting the new slots fixed it. Both pass in the final run.
 

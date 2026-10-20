@@ -36,6 +36,12 @@ public final class ProgressionTest {
         track.restore(-4, Double.NaN, -1);
         check(track.level() == 1 && track.xp() == 0, "corrupt saved values repaired");
         check(Progression.scale(Long.MAX_VALUE, .5) <= .5, "bounded derived bonus");
+        long[] activityProgress={0,1,49,50,51,99,100,149,150,200,500,1000};
+        double[] expected={0,0,0,.025,.025,.025,.05,.05,.075,.1,.25,.5};
+        for(int i=0;i<activityProgress.length;i++)
+            check(Math.abs(Progression.activityBonus(activityProgress[i])-expected[i])<1e-12,"activity milestone "+activityProgress[i]);
+        check(Progression.activityBonus(-1)==0 && Progression.activityBonus(Long.MIN_VALUE)==0,"negative activity progress gives no bonus");
+        check(Double.isFinite(Progression.activityBonus(Long.MAX_VALUE)),"large activity progress remains finite");
         System.out.println("Progression: " + checks + " checks passed");
     }
 }

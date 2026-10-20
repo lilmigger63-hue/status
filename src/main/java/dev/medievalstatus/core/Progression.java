@@ -39,6 +39,7 @@ public final class Progression {
         return Math.max(1, Math.min(1e100, Math.floor(base * Math.pow(Math.max(1, level), exponent))));
     }
     public static double scale(long level, double cap) { return cap * (1 - Math.exp(-Math.max(0, level - 1) / 40.0)); }
+    public static double activityBonus(long progress) { return (Math.max(0, progress) / 50L) * .025; }
 
     public static final class Level {
         private long level = 1;

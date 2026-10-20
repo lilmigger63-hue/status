@@ -97,7 +97,7 @@ public final class Events {
     @SubscribeEvent public static void speed(PlayerEvent.BreakSpeed e) {
         if (!(e.getEntity() instanceof ServerPlayer p)) return;
         PlayerData d = PlayerData.get(p); Bonuses b = Bonuses.of(d);
-        double bonus = e.getState().is(BlockTags.LOGS) ? b.wood() : b.mining();
+        double bonus = e.getState().is(BlockTags.LOGS) ? b.wood() : e.getState().is(BlockTags.MINEABLE_WITH_PICKAXE) ? b.mining() : b.otherMining();
         if (e.getState().getBlock() instanceof CropBlock) bonus += Math.min(.5,Bonuses.skill(d,Upgrade.EXPERIENCED_FARMER));
         if (p.isUnderWater() || !p.onGround()) bonus += Math.min(.6,Bonuses.skill(d,Upgrade.SURE_GRIP));
         e.setNewSpeed((float)(e.getOriginalSpeed()*(1+Math.min(Config.MINING_CAP.get(),bonus))));
@@ -179,7 +179,7 @@ public final class Events {
         if (!d.allow("craft",p.serverLevel().getGameTime(),1200)) return;
         d.award(p,3,"Crafting",1);
         ItemStack tool=p.getMainHandItem();
-        if (tool.isDamaged() && p.getRandom().nextDouble()<Math.min(.5,Bonuses.skill(d,Upgrade.CAREFUL_CRAFTER))) tool.setDamageValue(tool.getDamageValue()-1);
+        if (tool.isDamaged() && p.getRandom().nextDouble()<Bonuses.of(d).crafting()) tool.setDamageValue(tool.getDamageValue()-1);
     }
     @SubscribeEvent public static void traded(TradeWithVillagerEvent e) {
         if (!(e.getEntity() instanceof ServerPlayer p)) return;
@@ -224,7 +224,7 @@ public final class Events {
         PlayerData d=PlayerData.get(p); long now=p.serverLevel().getGameTime();
         confirmBreaks(p);
         if (!d.offspring.isEmpty()) {
-            double rate=Math.min(.4,Bonuses.skill(d,Upgrade.ANIMAL_CARETAKER));
+            double rate=Bonuses.of(d).breeding();
             for (AgeableMob baby:d.offspring) if (baby.isAlive() && baby.getAge()<0) baby.setAge((int)(baby.getAge()*(1-rate)));
             d.offspring.clear();
         }
@@ -247,7 +247,10 @@ public final class Events {
                 float exhaustion=p.getFoodData().getExhaustionLevel();
                 p.getFoodData().setExhaustion((float)Math.max(0,exhaustion-Math.min(.1,Bonuses.skill(d,Upgrade.ENDURING_RUNNER))));
             }
-            if (d.bonusesDirty) { Bonuses.of(d).apply(p); d.bonusesDirty=false; }
+            if (d.bonusesDirty) {
+                Bonuses.of(d).apply(p); d.bonusesDirty=false;
+                if (p.containerMenu instanceof MerchantMenu menu) refreshTrades(p,menu);
+            }
             if (d.dirty) { PlayerData.save(p); Network.sync(p); }
         }
         if (now%200==0 && p.isAlive() && p.getFoodData().getFoodLevel()>=18 && now-d.combatAt>=200 && p.getHealth()<p.getMaxHealth()) {
