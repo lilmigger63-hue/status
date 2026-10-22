@@ -1,0 +1,4 @@
+PASS all 32 compiled main classes equal the distribution JAR byte for byte
+PASS required loader, mixin and pack metadata present
+PASS no bundled Minecraft or NeoForge classes
+SHA-256 09d2d2204f335ea32c2e94835a40c8a0d3531e9b5843f37b554e7d7c92c0eb5c

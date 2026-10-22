@@ -10,6 +10,8 @@ A standalone **Minecraft 1.20.1 / Forge 47.x / Java 17** RPG progression mod. Pr
 
 Prebuilt JARs are stored in this repository's `dist` directory after validation.
 
+A separate [Minecraft 26.1.2 / NeoForge port](neoforge-26.1.2/README.md) preserves this build's progression and content. Its [JAR](dist/medievalstatus-1.0.0-neoforge-26.1.2.jar), [complete source project](dist/medievalstatus-1.0.0-neoforge-26.1.2-source.zip), and [verification report](neoforge-26.1.2/reports/VERIFICATION.md) are provided separately; the original Forge build remains available.
+
 ## Progression
 
 Six independent attributes start at level 1. Actions give attribute XP and separate character XP. Attribute levels cannot be purchased.

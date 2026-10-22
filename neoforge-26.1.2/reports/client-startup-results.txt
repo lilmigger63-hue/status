@@ -1,0 +1,12 @@
+[16:36:44] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 26.1.2.122, for MC 26.1.2
+[16:36:44] [modloading-worker-0/DEBUG] [ne.ne.fm.ja.AutomaticEventSubscriber/LOADING]: Subscribing method public static void dev.medievalstatus.client.ClientEvents$Registration.keys(net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent) to the event bus of mod medievalstatus
+[16:36:44] [modloading-worker-0/DEBUG] [ne.ne.fm.ja.AutomaticEventSubscriber/LOADING]: Subscribing method public static void dev.medievalstatus.client.ClientEvents$Registration.payloads(net.neoforged.neoforge.client.network.event.RegisterClientPayloadHandlersEvent) to the event bus of mod medievalstatus
+[16:36:44] [modloading-sync-worker/DEBUG] [ne.ne.fm.co.ConfigTracker/CONFIG]: Loaded TOML config file C:\Users\mathi\Documents\ChatGPT\stats 2\medieval-status\neoforge-26.1.2\run\config\medievalstatus-client.toml
+[16:36:44] [Render thread/INFO] [minecraft/Minecraft]: Backend library: LWJGL version 3.4.1+2
+[16:36:46] [Render thread/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: vanilla, mod_resources, mod/medievalstatus, mod/neoforge
+[16:36:47] [Render thread/WARN] [mojang/GlProgram]: neoforge:pipeline/item_translucent_unlit shader program does not use sampler Sampler2 defined in the pipeline. This might be a bug.
+[16:36:47] [Render thread/WARN] [mojang/GlProgram]: neoforge:pipeline/item_cutout_unlit shader program does not use sampler Sampler2 defined in the pipeline. This might be a bug.
+[16:36:48] [Render thread/INFO] [minecraft/SoundEngine]: Sound engine started
+[16:36:48] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+[16:37:17] [Render thread/INFO] [minecraft/Minecraft]: Stopping!
+BUILD SUCCESSFUL in 1m 3s

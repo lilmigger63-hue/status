@@ -1,0 +1,5 @@
+Original JAR: C:\Users\mathi\Documents\ChatGPT\stats 2\medieval-status\neoforge-26.1.2\baseline\medievalstatus-1.0.0.jar
+SHA-256: 777589dff5eb83bd9f57a9bdfbf21e0c31f0b4fec384826620872ac8023eb855
+Reference class loader: isolated URLClassLoader (parent=null)
+Target core origin: file:/C:/Users/mathi/Documents/ChatGPT/stats%202/medieval-status/neoforge-26.1.2/build/classes/java/main/
+Original JAR parity: 70014 exact comparisons passed

@@ -1,0 +1,4 @@
+PASS compatible language mapping: original translations preserved; only singular key-category translation/newlines permitted. Original SHA-256 50f1a66cc43e3c12ebb8bc54265e59c8726cb4e66cd0db397eacb275344bdb2b target SHA-256 db9d28dec5520d37e343380e39122baaed34c7bae0f04f2da9a81a3a116757f8
+PASS assets/medievalstatus/textures/gui/stone.png -> assets/medievalstatus/textures/gui/stone.png SHA-256 55c4ef6a211aebdcc8bb901e362e0e4b319dc3eb6228f7a486e6d7c12f371f91
+PASS data/medievalstatus/structures/empty.nbt -> data/medievalstatus/structure/empty.nbt SHA-256 5c4e3eda1559a6488bdfc9b5ff4476b764bb43ba0cf5437b3155fb29598d5cd0
+Asset parity: 3 resources verified (exact hashes or explicitly reported language compatibility mapping)

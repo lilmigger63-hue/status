@@ -1,0 +1,5 @@
+interfaceScale = 1.0
+animationIntensity = 0.4
+showActivities = true
+goldColor = "C6A665"
+stoneColor = "171A1D"

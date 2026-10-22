@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.medievalstatus.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": ["LegacyEntityMixin", "LivingArrowDamageMixin", "PlayerArrowDamageMixin"],
+  "injectors": {"defaultRequire": 1}
+}

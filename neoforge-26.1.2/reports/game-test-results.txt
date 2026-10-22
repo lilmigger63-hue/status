@@ -1,0 +1,42 @@
+NeoForge 26.1.2.122 / Minecraft 26.1.2; final run 2026-10-22
+Registered mod tests (30):
+        tests.put("nbtroundtrip", StatusGameTests::nbtRoundTrip);
+        tests.put("legacynbtdefaults", StatusGameTests::legacyNbtDefaults);
+        tests.put("legacyunversionednbt", StatusGameTests::legacyUnversionedNbt);
+        tests.put("malformednbtclamps", StatusGameTests::malformedNbtClamps);
+        tests.put("legacynumericanduuidnbt", StatusGameTests::legacyNumericAndUuidNbt);
+        tests.put("legacyforgeplayerenvelope", StatusGameTests::legacyForgePlayerEnvelope);
+        tests.put("legacyforgeentityloadinjection", StatusGameTests::legacyForgeEntityLoadInjection);
+        tests.put("deathclone", StatusGameTests::deathClone);
+        tests.put("purchaseresetandmodifiers", StatusGameTests::purchaseResetAndModifiers);
+        tests.put("invalidtransactions", StatusGameTests::invalidTransactions);
+        tests.put("sixrewardtracks", StatusGameTests::sixRewardTracks);
+        tests.put("boundedbonuses", StatusGameTests::boundedBonuses);
+        tests.put("plantedcroprewards", StatusGameTests::plantedCropRewards);
+        tests.put("failedbreakretainsprotection", StatusGameTests::failedBreakRetainsProtection);
+        tests.put("shiftclickbrewingrewardonce", StatusGameTests::shiftClickBrewingRewardOnce);
+        tests.put("merchantclosepreservesvanillareset", StatusGameTests::merchantClosePreservesVanillaReset);
+        tests.put("resetrevalidatestradepayment", StatusGameTests::resetRevalidatesTradePayment);
+        tests.put("isolatedactivitymappings", ActivityBonusGameTests::isolatedActivityMappings);
+        tests.put("existingstackingandcaps", ActivityBonusGameTests::existingStackingAndCaps);
+        tests.put("activitypersistenceandreset", ActivityBonusGameTests::activityPersistenceAndReset);
+        tests.put("milestonecacheandminingclassification", ActivityBonusGameTests::milestoneCacheAndMiningClassification);
+        tests.put("placedblockcodecpreservespositions", ActivityBonusGameTests::placedBlockCodecPreservesPositions);
+        tests.put("legacyplacedblockfilemigration", ActivityBonusGameTests::legacyPlacedBlockFileMigration);
+        tests.put("killingblowafterabsorption",PlatformGameTests::killingBlowAfterAbsorption);
+        tests.put("fullyabsorbedcombat",PlatformGameTests::fullyAbsorbedCombat);
+        tests.put("survivingandfatalendurance",PlatformGameTests::survivingAndFatalEndurance);
+        tests.put("potioncomponentdurationcap",PlatformGameTests::potionComponentDurationCap);
+        tests.put("foodexhaustionroundtrip",PlatformGameTests::foodExhaustionRoundTrip);
+        tests.put("arrowbonusretainsrawiframes",PlatformGameTests::arrowBonusRetainsRawIframes);
+        tests.put("zerocountbrewingredemption",PlatformGameTests::zeroCountBrewingRedemption);
+[16:33:56] [main/DEBUG] [mixin/]: Mixing LegacyEntityMixin from medievalstatus.mixins.json into net.minecraft.world.entity.Entity
+[16:33:56] [main/DEBUG] [mixin/]: Mixing LivingArrowDamageMixin from medievalstatus.mixins.json into net.minecraft.world.entity.LivingEntity
+[16:33:56] [main/DEBUG] [mixin/]: Mixing PlayerArrowDamageMixin from medievalstatus.mixins.json into net.minecraft.world.entity.player.Player
+[16:34:02] [Server thread/INFO] [minecraft/GameTestRunner]: Running test environment 'medievalstatus:activitybonusgametests' batch 0 (6 tests)...
+[16:34:03] [Server thread/INFO] [minecraft/GameTestRunner]: Running test environment 'medievalstatus:platformgametests' batch 0 (7 tests)...
+[16:34:03] [Server thread/INFO] [minecraft/GameTestRunner]: Running test environment 'medievalstatus:statusgametests' batch 0 (17 tests)...
+[16:34:03] [Server thread/INFO] [minecraft/GameTestRunner]: Running test environment 'minecraft:default' batch 0 (1 tests)...
+[16:34:03] [Server thread/INFO] [minecraft/GameTestServer]: ========= 31 GAME TESTS COMPLETE IN 1.363 s ======================
+[16:34:03] [Server thread/INFO] [minecraft/GameTestServer]: All 31 required tests passed :)
+BUILD SUCCESSFUL in 32s

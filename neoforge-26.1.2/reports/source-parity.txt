@@ -1,0 +1,8 @@
+PASS core/Progression.java
+PASS Upgrade.java
+PASS client/ClientState.java
+PASS All configuration keys, defaults, ranges and ordering (loader type mapping only)
+PASS UI layout settings, defaults and persistence (loader path import only)
+PASS All passive/attribute formulas, caps, stacking, cache and precision
+PASS Passive snapshot values, labels and ordering
+PASS Every status-screen string literal and its order

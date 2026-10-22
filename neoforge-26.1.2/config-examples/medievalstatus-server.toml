@@ -1,0 +1,249 @@
+
+[progression]
+	#Range: 1.0 ~ 100000.0
+	attributeBase = 100.0
+	#Range: 1.0 ~ 4.0
+	attributeExponent = 1.6
+	#Range: 1.0 ~ 100000.0
+	overallBase = 150.0
+	#Range: 1.0 ~ 4.0
+	overallExponent = 1.5
+	#Range: 0.0 ~ 100.0
+	attributeMultiplier = 1.0
+	#Range: 0.0 ~ 100.0
+	overallMultiplier = 1.0
+	#Range: 0.0 ~ 100.0
+	rewardMultiplier = 1.0
+	#Range: 0.0 ~ 100.0
+	StrengthMultiplier = 1.0
+	#Range: 0.0 ~ 100.0
+	DexterityMultiplier = 1.0
+	#Range: 0.0 ~ 100.0
+	ConstitutionMultiplier = 1.0
+	#Range: 0.0 ~ 100.0
+	IntelligenceMultiplier = 1.0
+	#Range: 0.0 ~ 100.0
+	WisdomMultiplier = 1.0
+	#Range: 0.0 ~ 100.0
+	CharismaMultiplier = 1.0
+
+#Exactly five points per character level is a fixed progression invariant.
+[rewards]
+	#Range: 0.0 ~ 1000.0
+	Mining = 2.0
+	#Range: 0.0 ~ 1000.0
+	Woodcutting = 4.0
+	#Range: 0.0 ~ 1000.0
+	Farming = 5.0
+	#Range: 0.0 ~ 1000.0
+	Exploration = 2.0
+	#Range: 0.0 ~ 1000.0
+	Archery = 6.0
+	#Range: 0.0 ~ 1000.0
+	Endurance = 4.0
+	#Range: 0.0 ~ 1000.0
+	Enchanting = 18.0
+	#Range: 0.0 ~ 1000.0
+	Brewing = 10.0
+	#Range: 0.0 ~ 1000.0
+	Trading = 8.0
+	#Range: 0.0 ~ 1000.0
+	Melee = 5.0
+	#Range: 0.0 ~ 1000.0
+	Breeding = 10.0
+	#Range: 0.0 ~ 1000.0
+	Crafting = 1.0
+	#Range: 0.0 ~ 1000.0
+	Recovery = 1.0
+
+[limits]
+	#Range: 20 ~ 200
+	movementSampleTicks = 40
+	#Range: 1 ~ 1200
+	activityCooldownTicks = 20
+	#Range: 0.0 ~ 100.0
+	maxBonusHealth = 20.0
+	#Range: 0.0 ~ 0.5
+	maxMovementFraction = 0.25
+	#Range: 0.0 ~ 5.0
+	maxMiningFraction = 1.0
+	#Range: 0.0 ~ 1.0
+	maxMeleeFraction = 0.35
+	#Range: 0.0 ~ 0.5
+	maxTradeDiscount = 0.25
+	#Range: 0.0 ~ 10.0
+	maxBonusArmor = 5.0
+	#Range: 0.0 ~ 5.0
+	attributeEffectiveness = 1.0
+
+[reset]
+	enabled = true
+	#Range: 0 ~ 86400
+	cooldownSeconds = 300
+	#Vanilla experience levels consumed by a confirmed reset.
+	#Range: 0 ~ 100
+	vanillaLevelCost = 0
+
+[upgrades]
+
+	[upgrades.efficient_miner]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.04
+		enabled = true
+
+	[upgrades.lumberjack]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.08
+		enabled = true
+
+	[upgrades.heavy_lifter]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.02
+		enabled = true
+
+	[upgrades.sure_grip]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.12
+		enabled = true
+
+	[upgrades.light_footed]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.01
+		enabled = true
+
+	[upgrades.enduring_runner]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.02
+		enabled = true
+
+	[upgrades.steady_aim]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.025
+		enabled = true
+
+	[upgrades.iron_body]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 1.0
+		enabled = true
+
+	[upgrades.natural_recovery]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.2
+		enabled = true
+
+	[upgrades.tough_skin]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.5
+		enabled = true
+
+	[upgrades.experienced_enchanter]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.04
+		enabled = true
+
+	[upgrades.experienced_brewer]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.05
+		enabled = true
+
+	[upgrades.careful_crafter]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.1
+		enabled = true
+
+	[upgrades.green_thumb]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.025
+		enabled = true
+
+	[upgrades.experienced_farmer]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.1
+		enabled = true
+
+	[upgrades.animal_caretaker]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.05
+		enabled = true
+
+	[upgrades.merchant]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.02
+		enabled = true
+
+	[upgrades.negotiator]
+		#Range: 1 ~ 100
+		cost = 1
+		#Range: 1 ~ 100
+		maxRank = 5
+		#Range: 0.0 ~ 10.0
+		effectPerRank = 0.04
+		enabled = true

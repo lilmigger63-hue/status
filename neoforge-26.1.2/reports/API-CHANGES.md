@@ -1,0 +1,17 @@
+# Necessary compatibility changes
+
+1. **Toolchain/loader:** Java 25, Gradle 9.2.1, official ModDevGradle 2.0.148 and NeoForge 26.1.2.122. Loader metadata changes to `neoforge.mods.toml`; original ID/name/version/author/description/license remain.
+2. **Events:** renamed NeoForge events, post-player tick, renamed block-break event, automatic mod/game bus routing and current server-level access. Original rewards, cooldowns and action classifications remain.
+3. **Damage:** apply the original arrow multiplier at the pre-armor `actuallyHurt` stage, after shield and hurt-resistance processing. The former `LivingHurtEvent` has no equivalent hook at that exact point, requiring small LivingEntity/Player adapters. Reward evaluation captures pre-hit health/alive and consumes final post-absorption damage to retain killing-blow, overkill and survival rules.
+4. **NBT:** optional scalar/compound/array getters are mapped to the old zero/empty defaults; UUID brew tokens retain their four-int representation. Original player payload version/keys/types remain.
+5. **Entity saves:** the `ForgeData` envelope is imported to NeoForge's envelope without overwriting current data; details in `SAVE-COMPATIBILITY.md`.
+6. **SavedData:** modern codec and namespaced storage type plus lossless legacy-file import; original long-array payload remains.
+7. **Items/potions:** brew token moves into the required `custom_data` component; potion effects use `potion_contents`. Shift-click token redemption and duration/amplifier/visual flags retain original semantics.
+8. **Food:** modern FoodData removed public exhaustion accessors. A lossless four-field serialization round trip changes only the same exhaustion value at the original tick interval.
+9. **Attributes:** registry holders, identifier-based transient modifier IDs and renamed additive/base-multiplier operations. Deterministic mod identifiers replace UUID modifier identifiers; the original modifiers were transient, so no persisted modifier migration is needed.
+10. **Networking:** registered custom payloads and stream codecs replace SimpleChannel. Request operations, server validation/cooldown, snapshot NBT and main-thread application remain; client-only sender/receiver registration stays client-only. Cross-version/loader network interoperability is not offered.
+11. **UI:** extraction-based GUI submission, current face/skin rendering, 2D matrix stack and mouse events replace removed render/input APIs. Original coordinates, colors, dimensions, strings, font usage, icons, animation expressions and texture remain. The original transparent in-world background is explicitly retained.
+12. **Resources/key mapping:** required registered key category with one translation alias; original P key and translations remain. Structure directory becomes singular `structure`, preserving its bytes. Pack metadata uses modern version fields covering resource format 84.0 and data format 101.1.
+13. **Verification:** modern test-function registration, current spawning/trade constructors and a real potion-content fixture adapt the original tests. No new gameplay content, configuration, dependency mod, command or item is introduced.
+
+Upstream references: [official NeoForge 26.1.2 MDK](https://github.com/NeoForgeMDKs/MDK-26.1.2-ModDevGradle), [ModDevGradle](https://github.com/neoforged/ModDevGradle), and the exact NeoForge source/userdev artifacts used by this build. Rendering and save APIs were checked against the matching Minecraft/NeoForge sources and patched classes, rather than older API examples.
